@@ -1,4 +1,3 @@
-alert("HI")
 import { createApp } from 'vue'
 
   createApp({
