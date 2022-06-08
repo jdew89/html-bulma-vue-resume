@@ -18,15 +18,53 @@
         }
     </script>
     <main id="resume">
+        <component :is="script" id="section-title-template">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <hr>
+                    <h2 class="title is-size-2"> {{sectiontitle}} </h2>
+                    <hr>
+                </div>
+            </div>
+        </component>
+
+
         <section class="section">
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-half has-text-centered is-primary">
-                        <div class="notification is-primary">test</div>
-                        <button class="button is-primary">testing</button>
-                        <!--<h1 class="title">{{message}}</h1>-->
+                        <h1 class="title is-size-1">Jeffrey DeWitt</h1>
+                        <h2 class="subtitle">Canton,OH • (440) 539-1862 • jadewitt00@gmail.com</h2>
                         
+                        
+                    </div>
+                </div>
+                
+                <section-title sectiontitle="Professional Summary"></section-title>
 
+                <div class="columns">
+                    <div class="column">
+                        <p>
+                            Talented Information Technology Professional with excellent customer service and 7+ years of Windows administration experience.
+                            Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with
+                            people of all skill levels.
+                        </p>
+                    </div>
+                </div>
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <hr>
+                        <h2 class="title is-size-2">Skills</h2>
+                        <hr>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column has-text-centered">
+                        <div class="columns is-multiline">
+                            <div class="column is-half" v-for="skill in skills">
+                                <li> {{skill}} </li>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
