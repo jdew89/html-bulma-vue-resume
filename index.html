@@ -27,6 +27,20 @@
                 </div>
             </div>
         </component>
+        <component :is="script" id="work-exp-template">
+            <div class="columns">
+                <div class="column">
+                    <h4 class="is-size-4">
+                        {{jobtitle}}
+                    </h4>
+                    <p class="is-size-6 has-text-weight-medium">{{daterange}}</p>
+                    <p class="is-size-6 has-text-weight-medium">{{company}}</p>
+                    <div class="pl-4">
+                        <li v-for="task in tasks">{{task}}</li>
+                    </div>
+                </div>
+            </div>
+        </component>
 
 
         <section class="section">
@@ -51,13 +65,8 @@
                         </p>
                     </div>
                 </div>
-                <div class="columns is-centered">
-                    <div class="column has-text-centered">
-                        <hr>
-                        <h2 class="title is-size-2">Skills</h2>
-                        <hr>
-                    </div>
-                </div>
+                <section-title sectiontitle="Skills and Certifications"></section-title>
+                
                 <div class="columns">
                     <div class="column has-text-centered">
                         <div class="columns is-multiline">
@@ -67,6 +76,18 @@
                         </div>
                     </div>
                 </div>
+                <section-title sectiontitle="Work History"></section-title>
+                <work-exp jobtitle="IT Director" daterange="10/2018 to 03/2021" company="Cutler Real Estate" :tasks="[
+                'Provide technical support for 400+ agents and staff.',
+                'Converted a fully physical server environment to a virtual environment.',
+                'Use Connectwise Control to remotely support 20+ offices.',
+                'Manage 80+ domain users through Active Directory and Group Policy.',
+                'Perform maintenance and deploy computers for staff.',
+                'Deployed MDT server for more efficient desktop deployment.',
+                'Track inventory of all hardware and software licenses.',
+                'Work with outside vendors to provide business needs.',
+                'Manage the IT budget and resource allocation.']"></work-exp>
+
             </div>
         </section>
     </main>
