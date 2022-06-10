@@ -384,10 +384,10 @@ code {
 }
 
 hr {
-  background-color: whitesmoke;
+  background-color: rgb(5, 0, 0);
   border: none;
   display: block;
-  height: 4px;
+  height: 1px; 
   margin: 1.5rem 0;
 }
 

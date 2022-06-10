@@ -8,6 +8,10 @@ const MyComp = {
 const app = createApp({
   data() {
     return {
+      fullname: "Jeffrey DeWitt",
+      location: "Canton,OH",
+      phone: "(440) 539-1862",
+      email: "jadewitt00@gmail.com",
       skills: [
         "AWS Certified Solutions Architect (2021)",
         "Windows Administration",
@@ -22,20 +26,36 @@ const app = createApp({
         "SQL Server Management",
         "Customer Service"
       ],
-      workExperience: [
+      // excellent customer service and
+      summary: `Talented Information Technology Professional with 7+ years of Windows administration experience and certified in AWS cloud architecture.
+      Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with
+      people of all skill levels. Skilled at automating deployments with scripting.`,
+      workexperience: [
         {
           jobtitle: "Software Application Engineer",
           daterange: "10/2021 to Present",
           company: "3E Company",
           tasks: [
+            'Created automated windows deployments using powershell.',
+            'Configured application to run on AWS Appstream and RDS.',
+            'Containerized our .NET api\'s in docker and deployed on AWS.',
             'Troubleshoot and support our enterprise Windows desktop application.',
-            'Configure and install the application.',
+            'Configure and install our enterprise Windows desktop application.',
             'Administer IIS .NET applications for customers.',
             'Migrated our hosted application from on-site to AWS.',
-            'Created automated deployments using powershell.',
-            'Configured application to run on AWS Appstream and RDS.',
-            'Containerized our .NET api\'s in docker.',
             'Work with high profile customers to help troubleshoot on-prem environment installations.'
+          ]
+        },
+        {
+          jobtitle: "Full Stack Engineer",
+          daterange: "10/2018 to Present",
+          company: "Easy Earnest",
+          tasks: [
+            'Designed and built SaaS product for making electronic earnest money payments.',
+            'Coded in Node and Express for backend.',
+            'Front end coded in VueJS.',
+            'Data stored using PostgreSQL.',
+            'Hosted and maintained on AWS infrastructure.',
           ]
         },
         {
@@ -52,6 +72,35 @@ const app = createApp({
             'Track inventory of all hardware and software licenses.',
             'Work with outside vendors to provide business needs.',
             'Manage the IT budget and resource allocation.'
+          ]
+        },
+        {
+          jobtitle: "IT Support Specialist",
+          daterange: "03/2017 to 10/2018",
+          company: "Cutler Real Estate",
+          tasks: [
+            'Provided technical support for 400+ agents and staff.',
+            'Used LogMeIn Rescue to remotely support 20+ offices.',
+            'Designed and deployed Happyfox ticketing system.',
+            'Facilitated a conversion from Delta Mail to the G Suite product.',
+            'Manage 80+ domain users through Active Directory and Group Policy.',
+            'Complete computer installs for staff computers.',
+            'Track inventory of all hardware and software licenses.',
+          ]
+        },
+        {
+          jobtitle: "IT Customer Support Specialist",
+          daterange: "02/2016 to 02/2017",
+          company: "Insight for Living",
+          tasks: [
+            'Provided technical, operation and training support for users.',
+            'Completed computer refreshes for client computers.',
+            'Tracked inventory of all hardware and software licenses.',
+            'Ensured printers are working properly and performed basic maintenance.',
+            'Assisted with bill coding and data entry.',
+            'Created documentation for procedures and installs.',
+            'Edited Active Directory and GPOs.',
+            'Patched, tested, and installed Ethernet cable.',
           ]
         },
       ],
