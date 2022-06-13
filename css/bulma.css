@@ -316,7 +316,7 @@ th:not([align]) {
 
 html {
   background-color: white;
-  font-size: 16px;
+  font-size: 14px; 
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   min-width: 300px;
@@ -384,11 +384,12 @@ code {
 }
 
 hr {
-  background-color: rgb(5, 0, 0);
-  border: none;
   display: block;
-  height: 1px; 
-  margin: 1.5rem 0;
+  height: 1px;
+  background: transparent;
+  width: 100%;
+  border: none;
+  border-top: solid 1px #aaa;
 }
 
 img {
