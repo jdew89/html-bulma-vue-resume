@@ -13,19 +13,26 @@ const app = createApp({
       phone: "(440) 539-1862",
       email: "jadewitt00@gmail.com",
       skills: [
-        "AWS Certified Solutions Architect (2021)",
-        "Windows Administration",
-        "Server Administration",
+        "Windows Server Administration",
+        //"Server Administration",
         "Docker",
         "Powershell",
-        "G Suite Administration",
-        "Javascript", 
+        //"G Suite Administration",
+        "Javascript",
+        "NodeJS",
         "Golang",
-        "Python",
-        "Oracle DB Management",
-        "SQL Server Management",
-        "Customer Service"
+        //"Python",
+        //"Oracle DB Management",
+        //"SQL Server Management",
+        //"Customer Service"
       ],
+      certs: ["AWS Certified Cloud Practitioner (2021)","AWS Certified Solutions Architect (2021)"],
+      education: {
+        degree: "Bachelor of Science",
+        field: "Computer Science",
+        gradyear: 2013,
+        school: "Malone University"
+      },
       // excellent customer service and
       summary: `Talented Information Technology Professional with 7+ years of Windows administration experience and certified in AWS cloud architecture.
       Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with

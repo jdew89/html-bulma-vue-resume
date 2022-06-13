@@ -62,39 +62,48 @@
                     </div>
                 </div>
 
-                <section-title sectiontitle="Skills and Certifications"></section-title>
                 
-                <div class="columns">
-                    <div class="column is-one-quarter"></div>
-                    <div class="column">
-                        <div class="columns is-multiline">
-                            <div class="column is-half py-0" v-for="skill in skills">
+                <div class="columns is-gapless ">
+                    <div class="column is-1"></div>
+                    <div class="column is-3">
+                        <h2 class="is-size-4 my-4">
+                            Skills
+                        </h2>
+                        <div class="columns is-multiline has-text-left">
+                            <div class="column is-full py-0" v-for="skill in skills">
                                 <li> {{skill}} </li>
                             </div>
                         </div>
+                        
+                    </div>
+                    <div class="column is-4">
+                        <h2 class="is-size-4 my-4">
+                            Certifications
+                        </h2>
+                        <div class="column is-full py-0" v-for="cert in certs">
+                            <li> {{cert}} </li>
+                        </div>
+                    </div>
+                    <div class="column is-4">
+                        <h2 class="is-size-4 my-4">
+                            Education
+                        </h2>
+                        <div class="column is-full py-0">
+                            <p>
+                                <span class="has-text-weight-medium">{{education.degree}}: </span>
+                                {{education.field}} ({{education.gradyear}})
+                            </p>
+                            <p>
+                                {{education.school}}
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <!-- <section-title sectiontitle="Skills and Certifications"></section-title> -->
 
                 <section-title sectiontitle="Work History"></section-title>
 
                 <work-exp v-for="job in workexperience" :jobtitle="job.jobtitle" :daterange="job.daterange" :company="job.company" :tasks="job.tasks"></work-exp>
-                
-
-                <section-title sectiontitle="Education"></section-title>
-                <div class="columns">
-                    <div class="column">
-                        <p>
-                           <span class="has-text-weight-medium">
-                               Bachelor of Science:
-                           </span> 
-                           Computer Science, 05/2013
-                        </p>
-                        <p>
-                            Malone University, Canton, Ohio
-                        </p>
-                    </div>
-                </div>
-
             </div>
         </section>
     </main>
