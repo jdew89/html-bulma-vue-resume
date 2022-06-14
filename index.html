@@ -89,8 +89,8 @@
                         <section-title sectiontitle="Certifications" ></section-title>
                         <div class="columns"> 
                             <div class="column py-0">
-                                <p class="" v-for="cert in certs">
-                                    {{cert}}
+                                <p class="" v-for="(cert,key) in certs">
+                                    {{cert.title}} ({{(cert.month + " " + cert.year).trim()}})
                                 </p>
                             </div>
                         </div>

@@ -33,7 +33,15 @@ const app = createApp({
         Administration: ["Windows Server", "Linux (Ubuntu, Amazon)"],
         //Cloud: ["AWS"],
       },
-      certs: ["AWS Certified Cloud Practitioner (May 2021)","AWS Certified Solutions Architect (Dec 2021)"],
+      certs: [{
+        title: "AWS Certified Cloud Practitioner",
+        month: "May",
+        year: 2021
+      },{
+        title: "AWS Certified Solutions Architect",
+        month: "Dec",
+        year: 2021
+      } ],
       //certs: [], 
       education: [{
         degree: "Bachelor of Science",
