@@ -1,9 +1,9 @@
-# html-bulma-vue-resume
-Resume made with HTML, Bootstrap and Vue
+# Resume made with HTML, BulmaCSS and Vue
 
-Edit values in index.js to adjust the resume
+### Editing the resume
+Edit data values in scripts/index.js to adjust the resume.
 
-## Printing
+### Printing
 Open in Chrome and click print.
 Change to "Save as PDF".
 
