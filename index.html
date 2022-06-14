@@ -18,6 +18,9 @@
         }
     </script>
     <main id="resume">
+
+        <!-- Vue Components -->
+
         <component :is="script" id="section-title-template">
             <div class="columns is-centered">
                 <div class="column">
@@ -28,7 +31,7 @@
             </div>
         </component>
         <component :is="script" id="work-exp-template">
-            <div class="columns is-multiline my-4">
+            <div class="columns is-multiline my-4" :class="{'my-4': !promoted}">
                 <div class="column is-half my-0 py-0">
                     <h4 class="is-size-5">
                         {{jobtitle}}
@@ -38,8 +41,7 @@
                     <p class="is-size-6 has-text-weight-medium">{{daterange}}</p> 
                 </div>
                 <div class="column is-full my-0 py-0">
-                    
-                    <p class="is-size-6 has-text-weight-medium">{{company}}, {{location}}</p> 
+                    <p class="is-size-6 has-text-weight-medium" v-if="">{{company}}, {{location}}</p> 
                     <div class="pl-4">
                         <li v-for="task in tasks">{{task}}</li>
                     </div>
@@ -47,25 +49,31 @@
             </div>
         </component>
 
+        <!-- Main content -->
 
         <section class="section">
             <div class="container">
                 <div class="columns">
-                    <div class="column is-half is-primary">
-                        <h1 class="title is-size-3">{{fullname}}</h1>
-                        <h2 class="subtitle is-size-5">{{phone}} • {{email}}</h2>
+                    <div class="column is-3 ">
+                        <h1 class="title is-size-3 my-0 ">{{fullname}}</h1>
+                        <h2 class="subtitle is-size-5 my-0">{{phone}}</h2>
+                        <h2 class="subtitle is-size-5 my-0">{{email}}</h2>
+                        <h2 class="subtitle is-size-5 my-0">{{location}}</h2>
+                    </div>
+                    <div class="column">
+                        <section-title sectiontitle="Professional Summary"></section-title>
+
+                        <div class="columns">
+                            <div class="column py-0">
+                                <p>
+                                    {{summary}}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <section-title sectiontitle="Professional Summary"></section-title>
-
-                <div class="columns">
-                    <div class="column py-0">
-                        <p>
-                            {{summary}}
-                        </p>
-                    </div>
-                </div>
+                
 
                 <section-title sectiontitle="Skills"></section-title>
                 <div class="columns">
@@ -75,70 +83,39 @@
                         </p>
                     </div>
                 </div>
-                <section-title sectiontitle="Certifications"></section-title>
-                <div class="columns">
-                    <div class="column py-0">
-                        <p class="" v-for="cert in certs">
-                            {{cert}}
-                        </p>
+
+                <div class="columns" v-if="certs.length || education.length">
+                    <div class="column is-half" v-if="certs.length">
+                        <section-title sectiontitle="Certifications" ></section-title>
+                        <div class="columns"> 
+                            <div class="column py-0">
+                                <p class="" v-for="cert in certs">
+                                    {{cert}}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <section-title sectiontitle="Education"></section-title>
-                <div class="columns">
-                    <div class="column py-0">
-                        <p>
-                            <span class="has-text-weight-medium">{{education.degree}}:  </span>
-                            {{education.field}} ({{education.gradyear}})
-                        </p>
-                        <p>
-                            {{education.school}} | {{education.location}}
-                        </p>
+                    <div class="column is-half" v-if="education.length"> 
+                        <section-title sectiontitle="Education"></section-title>
+                        <div class="columns is-multiline">
+                            <div class="column py-0 is-full" v-for="edu in education">
+                                <p>
+                                    <span class="has-text-weight-medium">{{edu.degree}}:  </span>
+                                    {{edu.field}} ({{edu.gradyear}})
+                                </p>
+                                <p>
+                                    {{edu.school}} | {{edu.location}}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
 
-
-                <!--<div class="columns is-gapless ">
-                    <div class="column is-1 "></div>
-                    <div class="column is-3">
-                        <h2 class="is-size-4 my-4"> 
-                            Skills
-                        </h2>
-                        <div class="columns is-multiline has-text-left">
-                            <div class="column is-full py-0" v-for="skill in skills">
-                                <li> {{skill}} </li>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="column is-4">
-                        <h2 class="is-size-4 my-4">
-                            Certifications
-                        </h2>
-                        <div class="column is-full py-0" v-for="cert in certs">
-                            <li> {{cert}} </li>
-                        </div>
-                    </div>
-                    <div class="column is-4">
-                        <h2 class="is-size-4 my-4">
-                            Education
-                        </h2>
-                        <div class="column is-full py-0">
-                            <p>
-                                <span class="has-text-weight-medium">{{education.degree}}: </span>
-                                {{education.field}} ({{education.gradyear}})
-                            </p>
-                            <p>
-                                {{education.school}}
-                            </p>
-                        </div>
-                    </div>
-                </div>-->
-                <!-- <section-title sectiontitle="Skills and Certifications"></section-title> -->
-
                 <section-title sectiontitle="Work History"></section-title>
+                <work-exp v-for="job in workexperience" :jobtitle="job.jobtitle" :daterange="job.daterange" :company="job.company" :location="job.location" :promoted="job.promoted" :tasks="job.tasks"></work-exp>
 
-                <work-exp v-for="job in workexperience" :jobtitle="job.jobtitle" :daterange="job.daterange" :company="job.company" :location="job.location" :tasks="job.tasks"></work-exp>
+
             </div>
         </section>
     </main>
