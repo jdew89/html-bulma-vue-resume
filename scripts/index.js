@@ -57,11 +57,11 @@ const app = createApp({
       workexperience: [
         {
           jobtitle: "Software Application Engineer",
-          daterange: "10/2021 to Present",
+          daterange: "03/2021 to Present",
           company: "3E Company",
           location: "Canton, OH",
           tasks: [
-            'Created automated Windows deployments using powershell',
+            'Automated legacy Windows application deployments using powershell',
             'Configured legacy Windows application to run on AWS Appstream and RDS',
             'Containerized our .NET api\'s in docker and deployed on AWS',
             //'Supported our enterprise Windows desktop application',
@@ -72,7 +72,7 @@ const app = createApp({
         },
         {
           jobtitle: "Full Stack Engineer",
-          daterange: "10/2018 to Present",
+          daterange: "07/2020 to Present",
           company: "Easy Earnest",
           location: "Canton, OH",
           tasks: [
@@ -89,9 +89,10 @@ const app = createApp({
           location: "Canton, OH",
           tasks: [
             'Converted a fully physical server environment to a virtual environment using Hyper-v',
-            'Provided technical support for 400+ agents and staff',
-            'Managed 80+ domain users through Active Directory and Group Policy',
             'Deployed MDT server for more efficient desktop deployment',
+            'Setup a new active directory domain and migrated all staff',
+            'Configured a management server for all ubiquity access points',
+            'Managed 80+ domain users through Active Directory and Group Policy',
             //'Tracked inventory of all hardware and software licenses',
             //'Used Connectwise Control to remotely support 20+ offices',
             //'Performed maintenance and deploy computers for staff',
