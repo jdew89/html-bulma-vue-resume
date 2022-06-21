@@ -51,9 +51,9 @@ const app = createApp({
         location: "Canton, OH"
       }],
       // excellent customer service and
-      summary: `Talented Information Technology Professional with 7+ years of Windows administration experience and certified in AWS cloud architecture.
+      summary: `Talented Information Technology Professional with 7+ years of Windows administration experience and certified in AWS cloud architecture. Skilled at automating deployments with scripting.
       Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with
-      people of all skill levels. Skilled at automating deployments with scripting.`,
+      people of all skill levels. `,
       workexperience: [
         {
           jobtitle: "Software Application Engineer",
