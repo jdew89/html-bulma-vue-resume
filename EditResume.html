@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resume</title>
+    <link rel="stylesheet" href="./css/bulma.css">
+
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <script type="importmap">
+        {
+            "imports": {
+                "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+            }
+        }
+    </script>
+    <main id="resume">
+
+        <!-- Vue Components -->
+
+        <component :is="script" id="section-title-template">
+            <div class="columns is-centered">
+                <div class="column">
+                    <!--<hr class="my-2">-->
+                    <h2 class="title is-size-4 my-1"> {{sectiontitle}} </h2>
+                    <hr class="my-2">
+                </div>
+            </div>
+        </component>
+        <component :is="script" id="work-exp-template">
+            <div class="columns is-multiline my-4" :class="{'my-4': !promoted}">
+                <div class="column is-half my-0 py-0">
+                    <h4 class="is-size-5">
+                        {{jobtitle}}
+                    </h4>
+                </div>
+                <div class="column is-half has-text-right py-0">
+                    <p class="is-size-6 has-text-weight-medium">{{daterange}}</p> 
+                </div>
+                <div class="column is-full my-0 py-0">
+                    <p class="is-size-6 has-text-weight-medium" v-if="">{{company}}, {{location}}</p> 
+                    <div class="pl-4">
+                        <li v-for="task in tasks">{{task}}</li>
+                    </div>
+                </div>
+            </div>
+        </component>
+
+
+        <div class="columns">
+            <div class="column is-2">
+                <!-- Form to edit Resume -->
+                <aside class="menu">
+                    <p class="menu-label">
+                        General
+                    </p>
+                    <p class="menu-label">
+                        <li><a href="">TESt</a></li>
+                        <li><a href="">TESting</a></li>
+                    </p>
+                </aside>
+            </div>
+            <div class="column">
+                <!-- Main content -->
+    
+                <section class="section">
+                    <div class="columns">
+                        <div class="column is-3 ">
+                            <h1 class="title is-size-3 my-0 ">{{fullname}}</h1>
+                            <h2 class="subtitle is-size-5 my-0">{{phone}}</h2>
+                            <h2 class="subtitle is-size-5 my-0">{{email}}</h2>
+                            <h2 class="subtitle is-size-5 my-0">{{location}}</h2>
+                        </div>
+                        <div class="column">
+                            <section-title sectiontitle="Professional Summary"></section-title>
+
+                            <div class="columns">
+                                <div class="column py-0">
+                                    <p>
+                                        {{summary}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <section-title sectiontitle="Skills"></section-title>
+                    <div class="columns">
+                        <div class="column py-0">
+                            <p class="has-text-weight-medium" v-for="(skill, category) in skills">
+                                {{category}}: <span class="has-text-weight-normal"> {{skill.join(", ")}} </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="columns" v-if="certs.length || education.length">
+                        <div class="column is-half" v-if="certs.length">
+                            <section-title sectiontitle="Certifications" ></section-title>
+                            <div class="columns"> 
+                                <div class="column py-0">
+                                    <p class="" v-for="(cert,key) in certs">
+                                        {{cert.title}} ({{(cert.month + " " + cert.year).trim()}})
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-half" v-if="education.length"> 
+                            <section-title sectiontitle="Education"></section-title>
+                            <div class="columns is-multiline">
+                                <div class="column py-0 is-full" v-for="edu in education">
+                                    <p>
+                                        <span class="has-text-weight-medium">{{edu.degree}}:  </span>
+                                        {{edu.field}} ({{edu.gradyear}})
+                                    </p>
+                                    <p>
+                                        {{edu.school}} | {{edu.location}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <section-title sectiontitle="Work History"></section-title>
+                    <work-exp v-for="job in workexperience" :jobtitle="job.jobtitle" :daterange="job.daterange" :company="job.company" :location="job.location" :promoted="job.promoted" :tasks="job.tasks"></work-exp>
+                </section>
+            </div>
+        
+        </div>
+    </main>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
