@@ -27,9 +27,9 @@ const app = createApp({
         //"Customer Service"
       ],
       skills: {
-        Programming: ["Powershell", "Javascript", "NodeJS", "GoLang", "Python", "SQL"],
-        Software: ["Docker", "GitHub", "AWS"],
-        Databases: ["PostgreSQL", "SQL Server", "Oracle DB", "DynamoDB", "MongoDB"],
+        Programming: ["Powershell", "Javascript", "NodeJS", "GoLang", "SQL", "Python"],
+        Technologies: ["Docker", "GitHub", "AWS"],
+        Databases: ["PostgreSQL", "Microsoft SQL Server", "Oracle DB", "DynamoDB", "MongoDB"],
         Administration: ["Windows Server", "Linux (Ubuntu, Amazon)"],
         //Cloud: ["AWS"],
       },
@@ -52,8 +52,8 @@ const app = createApp({
       }],
       // excellent customer service and
       summary: `Talented Information Technology Professional with 7+ years of Windows administration experience and certified in AWS cloud architecture.
-      Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with
-      people of all skill levels. Skilled at automating deployments with scripting.`,
+      Skilled at automating deployments with scripting. Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with
+      people of all skill levels.`,
       workexperience: [
         {
           jobtitle: "Software Application Engineer",
@@ -63,9 +63,9 @@ const app = createApp({
           tasks: [
             'Automated legacy Windows application deployments using powershell',
             'Configured legacy Windows application to run on AWS Appstream and RDS',
-            'Containerized our .NET api\'s in docker and deployed on AWS',
+            'Containerized .NET api\'s in docker and deployed on AWS',
             //'Supported our enterprise Windows desktop application',
-            'Administered IIS .NET applications for customers',
+            'Administered IIS .NET applications for external customers',
             'Migrated our hosted application from on-site to AWS',
             //'Worked with high profile customers to help troubleshoot on-prem environment installations'
           ]
@@ -90,7 +90,7 @@ const app = createApp({
           tasks: [
             'Converted a fully physical server environment to a virtual environment using Hyper-v',
             'Deployed MDT server for more efficient desktop deployment',
-            'Setup a new active directory domain and migrated all staff',
+            'Setup a new active directory domain and migrated all users',
             'Configured a management server for all ubiquity access points',
             'Managed 80+ domain users through Active Directory and Group Policy',
             //'Tracked inventory of all hardware and software licenses',
@@ -108,6 +108,7 @@ const app = createApp({
           promoted: true,
           tasks: [
             'Provided technical support for 400+ agents and staff',
+            'Wrote a python script to scrape website data',
             'Managed 400+ users in G Suite',
             //'Used LogMeIn Rescue to remotely support 20+ offices',
             'Facilitated a conversion from Delta Mail to the G Suite product',
