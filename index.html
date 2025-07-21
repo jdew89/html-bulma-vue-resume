@@ -61,8 +61,8 @@
                         <h2 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Phone: </span>{{phone}}</h2>
                         <h2 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Email: </span>{{email}}</h2>
                         <h2 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Location: </span>{{location}}</h2>
-                        <h3 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">LinkedIn: </span><a href="{{linkedin}}" target="_blank">{{linkedin}}</a></h3>
-                        <h3 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Github: </span><a href="{{github}}" target="_blank">{{github}}</a></h3>
+                        <h3 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">LinkedIn: </span><a v-bind:href="linkedin" target="_blank">{{linkedin}}</a></h3>
+                        <h3 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Github: </span><a v-bind:href="github" target="_blank">{{github}}</a></h3>
                     </div>
                     <!-- <div class="columns" v-if="certs.length || education.length"> -->
                     <div class="column" v-if="education.length"> 
