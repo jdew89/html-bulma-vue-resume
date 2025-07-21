@@ -12,25 +12,36 @@ const app = createApp({
       location: "Canton,OH",
       phone: "(440) 539-1862",
       email: "jadewitt00@gmail.com",
-      skills_old: [
-        "Windows Server Administration",
-        //"Server Administration",
-        "Docker",
-        "Powershell",
-        //"G Suite Administration",
-        //"Javascript",
-        "NodeJS",
-        "Golang",
-        //"Python",
-        //"Oracle DB Management",
-        //"SQL Server Management",
-        //"Customer Service"
-      ],
+      linkedin: "https://www.linkedin.com/in/jeffrey-dewitt-902b0560/",
+      github: "https://github.com/jdew89",
       skills: {
-        Programming: ["Powershell", "Javascript", "NodeJS", "GoLang", "SQL", "Python"],
-        Technologies: ["Docker", "GitHub", "AWS"],
-        Databases: ["PostgreSQL", "Microsoft SQL Server", "Oracle DB", "DynamoDB", "MongoDB"],
-        Administration: ["Windows Server", "Linux (Ubuntu, Amazon)"],
+        Programming: [
+          // "Powershell",
+          "Javascript",
+          "Typescript",
+          "Go",
+          "SQL",
+          "Python"
+        ],
+        Technologies: [
+          "Docker",
+          "GitHub",
+          "AWS",
+          "Kubernetes",
+          "Pulumi",
+        ],
+        Databases: [
+          "PostgreSQL",
+          "MySQL",
+          // "Microsoft SQL Server",
+          // "Oracle DB",
+          "DynamoDB",
+          // "MongoDB"
+        ],
+        // Administration: [
+        //   "Windows Server",
+        //   "Linux (Ubuntu, Amazon)"
+        // ],
         //Cloud: ["AWS"],
       },
       certs: [{
@@ -42,7 +53,6 @@ const app = createApp({
         month: "Dec",
         year: 2021
       } ],
-      //certs: [], 
       education: [{
         degree: "Bachelor of Science",
         field: "Computer Science",
@@ -50,14 +60,37 @@ const app = createApp({
         school: "Malone University",
         location: "Canton, OH"
       }],
-      // excellent customer service and
-      summary: `Talented Information Technology Professional with 7+ years of Windows administration experience and certified in AWS cloud architecture.
-      Skilled at automating deployments with scripting. Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with
-      people of all skill levels.`,
+      // IT support summary
+      // summary: `Talented Information Technology Professional with 7+ years of Windows administration experience and certified in AWS cloud architecture.
+      // Skilled at automating deployments with scripting. Motivated to learn new skills and adapt to new technologies and environments. Effective and comfortable communicating with
+      // people of all skill levels.`,
+      // DevOps summary
+      summary: `I'm a highly motivated DevOps professional with a deep understanding of infrastructure management and security best practices.
+      Throughout my career, I've gained extensive experience in various roles, ranging from system administration to my current focus 
+      in DevOps. I thrive in challenging environments and find satisfaction in designing and implementing secure, 
+      scalable, and efficient infrastructure architectures.
+
+      I am experienced with Kubernetes, AWS, System Administration, CI/CD, Go, NodeJs, and Python.`,
       workexperience: [
         {
+          jobtitle: "DevOps Engineer",
+          daterange: "08/2022 to Present",
+          company: "Document Crunch",
+          location: "Canton, OH",
+          tasks: [
+            'Managed kubernetes cluster (EKS) to deploy microservice applications',
+            'Created Github Action pipelines and templates for CI/CD',
+            'Wrote job orchestration service in go for managing thousands of jobs',
+            'Contributed to many customer facing backend python and go microservices',
+            'Codified all infrastructure using Pulumi',
+            'Setup internal slack bot for alerting and investigating failed jobs',
+            'Wrote helm charts for k8s deployments',
+            'Configured AWS Cognito with SSO and multi-tenant support'
+          ]
+        },
+        {
           jobtitle: "Software Application Engineer",
-          daterange: "03/2021 to Present",
+          daterange: "03/2021 to 08/2022",
           company: "3E Company",
           location: "Canton, OH",
           tasks: [
@@ -70,20 +103,20 @@ const app = createApp({
             //'Worked with high profile customers to help troubleshoot on-prem environment installations'
           ]
         },
+        // {
+        //   jobtitle: "Full Stack Engineer",
+        //   daterange: "07/2020 to Present",
+        //   company: "Easy Earnest",
+        //   location: "Canton, OH",
+        //   tasks: [
+        //     'Designed and built SaaS product for making electronic earnest money payments',
+        //     'Coded in Node/Express for backend and VueJs for frontend',
+        //     'Stored data using PostgreSQL',
+        //     'Hosted and maintained on AWS infrastructure',
+        //   ]
+        // },
         {
-          jobtitle: "Full Stack Engineer",
-          daterange: "07/2020 to Present",
-          company: "Easy Earnest",
-          location: "Canton, OH",
-          tasks: [
-            'Designed and built SaaS product for making electronic earnest money payments',
-            'Coded in Node/Express for backend and VueJs for frontend',
-            'Stored data using PostgreSQL',
-            'Hosted and maintained on AWS infrastructure',
-          ]
-        },
-        {
-          jobtitle: "IT Director",
+          jobtitle: "IT Manager",
           daterange: "10/2018 to 03/2021",
           company: "Cutler Real Estate",
           location: "Canton, OH",
@@ -100,7 +133,7 @@ const app = createApp({
             //'Managed the IT budget and resource allocation'
           ]
         },
-        {
+        /*{
           jobtitle: "IT Support Specialist",
           daterange: "03/2017 to 10/2018",
           company: "Cutler Real Estate",
@@ -117,7 +150,8 @@ const app = createApp({
             //'Completed computer installs for staff computers',
             //'Tracked inventory of all hardware and software licenses',
           ]
-        },/*
+        },
+        /*
         {
           jobtitle: "IT Customer Support Specialist",
           daterange: "02/2016 to 02/2017",
