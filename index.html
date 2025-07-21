@@ -35,12 +35,15 @@
                     <h4 class="is-size-5">
                         {{jobtitle}}
                     </h4>
+                    <h4 class="is-size-6" v-for="titlechange in titlechanges">
+                        {{titlechange.oldName}} (promoted {{titlechange.month}} {{titlechange.year}})
+                    </h4>
                 </div>
                 <div class="column is-half has-text-right py-0">
-                    <p class="is-size-6 has-text-weight-medium">{{daterange}}</p> 
+                    <p class="is-size-6 has-text-weight-medium">{{daterange}}</p>
                 </div>
                 <div class="column is-full my-0 py-0">
-                    <p class="is-size-6 has-text-weight-medium" v-if="">{{company}}, {{location}}</p> 
+                    <p class="is-size-6 has-text-weight-medium" v-if="">{{company}}</p>
                     <div class="pl-4">
                         <li v-for="task in tasks">{{task}}</li>
                     </div>
@@ -53,16 +56,16 @@
         <section class="section">
             <div class="container">
                 <div class="columns">
-                    <div class="column is-6 ">
+                    <div class="column is-7 ">
                         <h1 class="title is-size-3 my-0 pb-2">{{fullname}}</h1>
-                        <h2 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Phone: </span>{{phone}}</h2>
-                        <h2 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Email: </span>{{email}}</h2>
-                        <h2 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Location: </span>{{location}}</h2>
-                        <h3 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">LinkedIn: </span><a href="{{linkedin}}" target="_blank">{{linkedin}}</a></h3>
-                        <h3 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Github: </span><a href="{{github}}" target="_blank">{{github}}</a></h3>
+                        <h2 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Phone: </span>{{phone}}</h2>
+                        <h2 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Email: </span>{{email}}</h2>
+                        <h2 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Location: </span>{{location}}</h2>
+                        <h3 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">LinkedIn: </span><a href="{{linkedin}}" target="_blank">{{linkedin}}</a></h3>
+                        <h3 class="subtitle is-size-6 my-0"><span class="has-text-weight-medium">Github: </span><a href="{{github}}" target="_blank">{{github}}</a></h3>
                     </div>
                     <!-- <div class="columns" v-if="certs.length || education.length"> -->
-                    <div class="column is-6" v-if="education.length"> 
+                    <div class="column" v-if="education.length"> 
                         <section-title sectiontitle="Education/Certifications"></section-title>
                         <div class="columns is-multiline">
                             <div class="column py-0 is-full" v-for="edu in education">
@@ -108,11 +111,8 @@
                     </div>
                 </div>
 
-                
-                
-
                 <section-title sectiontitle="Work History"></section-title>
-                <work-exp v-for="job in workexperience" :jobtitle="job.jobtitle" :daterange="job.daterange" :company="job.company" :location="job.location" :promoted="job.promoted" :tasks="job.tasks"></work-exp>
+                <work-exp v-for="job in workexperience" :jobtitle="job.jobtitle" :daterange="job.daterange" :company="job.company" :location="job.location" :promoted="job.promoted" :tasks="job.tasks" :titlechanges="job.titlechanges"></work-exp>
 
 
             </div>

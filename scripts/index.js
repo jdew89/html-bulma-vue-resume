@@ -17,7 +17,6 @@ const app = createApp({
       skills: {
         Programming: [
           // "Powershell",
-          "Javascript",
           "Typescript",
           "Go",
           "SQL",
@@ -27,8 +26,9 @@ const app = createApp({
           "Docker",
           "GitHub",
           "AWS",
-          "Kubernetes",
           "Pulumi",
+          "Kubernetes",
+          "Helm",
         ],
         Databases: [
           "PostgreSQL",
@@ -68,19 +68,20 @@ const app = createApp({
       summary: `I'm a highly motivated DevOps professional with a deep understanding of infrastructure management and security best practices.
       Throughout my career, I've gained extensive experience in various roles, ranging from system administration to my current focus 
       in DevOps. I thrive in challenging environments and find satisfaction in designing and implementing secure, 
-      scalable, and efficient infrastructure architectures.
-
-      I am experienced with Kubernetes, AWS, System Administration, CI/CD, Go, NodeJs, and Python.`,
+      scalable, and efficient infrastructure architectures.`,
       workexperience: [
         {
-          jobtitle: "DevOps Engineer",
+          jobtitle: "Senior DevOps Engineer",
+          titlechanges: [
+            { month: "Feb", year: 2025, oldName: "DevOps Engineer"},
+          ],
           daterange: "08/2022 to Present",
           company: "Document Crunch",
           location: "Canton, OH",
           tasks: [
             'Managed kubernetes cluster (EKS) to deploy microservice applications',
             'Created Github Action pipelines and templates for CI/CD',
-            'Wrote job orchestration service in go for managing thousands of jobs',
+            'Wrote a job orchestration service in go for managing thousands of jobs',
             'Contributed to many customer facing backend python and go microservices',
             'Codified all infrastructure using Pulumi',
             'Setup internal slack bot for alerting and investigating failed jobs',
@@ -123,9 +124,10 @@ const app = createApp({
           tasks: [
             'Converted a fully physical server environment to a virtual environment using Hyper-v',
             'Deployed MDT server for more efficient desktop deployment',
-            'Setup a new active directory domain and migrated all users',
+            // 'Setup a new active directory domain and migrated all users',
             'Configured a management server for all ubiquity access points',
             'Managed 80+ domain users through Active Directory and Group Policy',
+
             //'Tracked inventory of all hardware and software licenses',
             //'Used Connectwise Control to remotely support 20+ offices',
             //'Performed maintenance and deploy computers for staff',
@@ -205,6 +207,7 @@ app.component(
     },
     props: {
       jobtitle: String,
+      titlechanges: Array,
       daterange: String,
       company: String,
       location: String,
