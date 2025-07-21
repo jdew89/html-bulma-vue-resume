@@ -53,26 +53,51 @@
         <section class="section">
             <div class="container">
                 <div class="columns">
-                    <div class="column is-3 ">
-                        <h1 class="title is-size-3 my-0 ">{{fullname}}</h1>
-                        <h2 class="subtitle is-size-5 my-0">{{phone}}</h2>
-                        <h2 class="subtitle is-size-5 my-0">{{email}}</h2>
-                        <h2 class="subtitle is-size-5 my-0">{{location}}</h2>
+                    <div class="column is-6 ">
+                        <h1 class="title is-size-3 my-0 pb-2">{{fullname}}</h1>
+                        <h2 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Phone: </span>{{phone}}</h2>
+                        <h2 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Email: </span>{{email}}</h2>
+                        <h2 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Location: </span>{{location}}</h2>
+                        <h3 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">LinkedIn: </span><a href="{{linkedin}}" target="_blank">{{linkedin}}</a></h3>
+                        <h3 class="subtitle is-size-5 my-0"><span class="has-text-weight-medium">Github: </span><a href="{{github}}" target="_blank">{{github}}</a></h3>
                     </div>
-                    <div class="column">
-                        <section-title sectiontitle="Professional Summary"></section-title>
-
-                        <div class="columns">
-                            <div class="column py-0">
+                    <!-- <div class="columns" v-if="certs.length || education.length"> -->
+                    <div class="column is-6" v-if="education.length"> 
+                        <section-title sectiontitle="Education/Certifications"></section-title>
+                        <div class="columns is-multiline">
+                            <div class="column py-0 is-full" v-for="edu in education">
                                 <p>
-                                    {{summary}}
+                                    <span class="has-text-weight-medium">{{edu.degree}}:  </span>
+                                    {{edu.field}} ({{edu.gradyear}})
+                                </p>
+                                <!-- <p>
+                                    {{edu.school}} | {{edu.location}}
+                                </p> -->
+                            </div>
+                            <div class="column py-0">
+                                <p class="" v-for="(cert,key) in certs">
+                                    <span class="has-text-weight-medium">{{cert.title}}</span> ({{(cert.month + " " + cert.year).trim()}})
                                 </p>
                             </div>
                         </div>
                     </div>
+                    <!-- <div class="column is-4" v-if="certs.length">
+                        
+                    </div> -->
+                    
                 </div>
+                    
+                <!-- </div> -->
                 
-                
+                <section-title sectiontitle="Professional Summary"></section-title>
+
+                <div class="columns">
+                    <div class="column py-0">
+                        <p>
+                            {{summary}}
+                        </p>
+                    </div>
+                </div>
 
                 <section-title sectiontitle="Skills"></section-title>
                 <div class="columns">
@@ -83,32 +108,7 @@
                     </div>
                 </div>
 
-                <div class="columns" v-if="certs.length || education.length">
-                    <div class="column is-half" v-if="certs.length">
-                        <section-title sectiontitle="Certifications" ></section-title>
-                        <div class="columns"> 
-                            <div class="column py-0">
-                                <p class="" v-for="(cert,key) in certs">
-                                    {{cert.title}} ({{(cert.month + " " + cert.year).trim()}})
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column is-half" v-if="education.length"> 
-                        <section-title sectiontitle="Education"></section-title>
-                        <div class="columns is-multiline">
-                            <div class="column py-0 is-full" v-for="edu in education">
-                                <p>
-                                    <span class="has-text-weight-medium">{{edu.degree}}:  </span>
-                                    {{edu.field}} ({{edu.gradyear}})
-                                </p>
-                                <p>
-                                    {{edu.school}} | {{edu.location}}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 
 
                 <section-title sectiontitle="Work History"></section-title>
